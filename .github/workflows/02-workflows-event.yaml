@@ -1,0 +1,15 @@
+name: 02 worflows events
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+jobs:
+  echo-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: shoe the trigger
+        run: echo I've been trigered by ${{github.event}}
